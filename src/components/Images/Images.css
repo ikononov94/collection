@@ -1,0 +1,14 @@
+.images {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media(max-width: 645px) and (orientation: landscape) {
+    .images {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
