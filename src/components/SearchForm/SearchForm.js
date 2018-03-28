@@ -1,39 +1,40 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SearchForm.css';
 
 
 class SearchForm extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.onSubmit = this.onSubmit.bind(this);
-    }
+    this.onSubmit = this.onSubmit.bind(this);
+  }
 
-    onSubmit(event) {
-        const { search } = this.props;
-        let { value } = this.input;
+  onSubmit(event) {
+    const { search } = this.props;
+    const { value } = this.input;
 
-        event.preventDefault();
+    event.preventDefault();
 
-        search(encodeURIComponent(value.trim()));
+    search(encodeURIComponent(value.trim()));
+  }
 
-    }
-
-    render() {
-        return (
-            <form   className="search-form" onSubmit={this.onSubmit}>
-                <input  className="search-form__input"
-                        type="text"
-                        ref={(input) => { this.input = input }} />
-                <button className="search-form__button">Найти</button>
-            </form>);
-    }
+  render() {
+    return (
+      <form className="search-form" onSubmit={this.onSubmit}>
+        <input
+          className="search-form__input"
+          type="text"
+          ref={(input) => { this.input = input; }}
+        />
+        <button className="search-form__button">Найти</button>
+      </form>);
+  }
 }
 
 
-    SearchForm.propTypes = {
-        search: PropTypes.func
-    };
+SearchForm.propTypes = {
+  search: PropTypes.func.isRequired,
+};
 
 export default SearchForm;
