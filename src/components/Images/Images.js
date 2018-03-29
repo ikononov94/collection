@@ -17,7 +17,7 @@ const Images = ({ images, onClick }) =>
   );
 
 Images.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.array),
+  images: PropTypes.arrayOf(PropTypes.object),
   onClick: PropTypes.func.isRequired,
 };
 

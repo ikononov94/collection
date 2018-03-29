@@ -15,7 +15,11 @@ const Image = ({ image, onClick }) =>
   );
 
 Image.propTypes = {
-  image: PropTypes.objectOf(PropTypes.object).isRequired,
+  image: PropTypes.shape({
+    name: PropTypes.string,
+    imageId: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+  }).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

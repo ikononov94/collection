@@ -39,7 +39,7 @@ export default class SlideShow extends Component {
 }
 
 SlideShow.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.array).isRequired,
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
   imgIndex: PropTypes.number.isRequired,
   onClose: PropTypes.func.isRequired,
   nextImage: PropTypes.func.isRequired,
