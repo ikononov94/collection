@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 import './Image.css';
 
 const Image = ({ image, onClick }) =>
-  (<div
-    className="image"
-    onClick={() => onClick(image.imageId)}
-  >
-    <img
-      src={image.thumbnailUrl}
-      alt={image.name}
-    />
-  </div>);
+  (
+    <div className="image">
+      <img
+        src={image.thumbnailUrl}
+        alt={image.name}
+        onClick={() => onClick(image.imageId)}
+        role="presentation"
+      />
+    </div>
+  );
 
 Image.propTypes = {
-  image: PropTypes.object.isRequired,
+  image: PropTypes.objectOf(PropTypes.object).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

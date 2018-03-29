@@ -4,18 +4,20 @@ import Image from '../Image/Image';
 import './Images.css';
 
 const Images = ({ images, onClick }) =>
-  (<div className="images">
-    { images.map(image =>
+  (
+    <div className="images">
+      { images.map(image =>
                     (<Image
                       image={image}
                       key={image.imageId}
                       onClick={onClick}
                     />))
                 }
-  </div>);
+    </div>
+  );
 
 Images.propTypes = {
-  images: PropTypes.array,
+  images: PropTypes.arrayOf(PropTypes.array),
   onClick: PropTypes.func.isRequired,
 };
 
