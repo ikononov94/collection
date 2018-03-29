@@ -4,3 +4,10 @@
 .image img {
     width: 320px;
 }
+
+@media(max-width: 645px) and (orientation: landscape) {
+    .image {
+        display: inline-block;
+        margin: 5px;
+    }
+}
