@@ -7,11 +7,11 @@ const Images = ({ images, onClick }) =>
   (
     <div className="images">
       { images.map(image =>
-                    (<Image
-                      image={image}
-                      key={image.imageId}
-                      onClick={onClick}
-                    />))
+          (<Image
+            image={image}
+            key={image.imageId}
+            onClick={onClick}
+          />))
                 }
     </div>
   );

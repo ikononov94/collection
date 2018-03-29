@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import SearchForm from './components/SearchForm/SearchForm';
 import Images from './components/Images/Images';
-import ShowImage from './components/ShowImage/ShowImage';
+import SlideShow from './components/SlideShow/SlideShow';
 import './App.css';
 
 class App extends Component {
@@ -35,7 +35,6 @@ class App extends Component {
         this.setState({
           imgIndex: index,
         });
-        console.log(id, index);
       }
     });
   }
@@ -55,8 +54,7 @@ class App extends Component {
       .then(response => response.json())
       .then(json => json.value)
       .then((images) => {
-        console.log(images);
-        return this.setState({ images, loading: false });
+        this.setState({ images, loading: false });
       });
   }
 
@@ -103,14 +101,14 @@ class App extends Component {
           <Images images={images} onClick={this.onClickImage} />
         </div>
         {imgIndex !== null &&
-        <ShowImage
+        <SlideShow
           images={this.state.images}
           imgIndex={this.state.imgIndex}
           onClose={this.onCloseSlideShow}
           nextImage={this.nextImage}
           prevImage={this.prevImage}
         />
-                      }
+        }
       </section>
     );
   }

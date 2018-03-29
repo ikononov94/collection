@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ShowImage.css';
+import './SlideShow.css';
 
-export default class ShowImage extends Component {
+export default class SlideShow extends Component {
   constructor(props) {
     super(props);
 
@@ -38,7 +38,7 @@ export default class ShowImage extends Component {
   }
 }
 
-ShowImage.propTypes = {
+SlideShow.propTypes = {
   images: PropTypes.arrayOf(PropTypes.array).isRequired,
   imgIndex: PropTypes.number.isRequired,
   onClose: PropTypes.func.isRequired,
