@@ -48,7 +48,7 @@ class App extends Component {
     this.setState({ loading: true, isEmptyInput: false });
 
     fetch(
-      `https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=${searchValue}&count=30`,
+      `https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=${searchValue}&count=33`,
       { headers: { 'Ocp-Apim-Subscription-Key': 'b763eddd694345cfaa411d94dc428a4c' } },
     )
       .then(response => response.json())
@@ -71,6 +71,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.images);
     const {
       loading, images, isEmptyInput, imgIndex,
     } = this.state;
