@@ -1,15 +1,23 @@
 .images {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 5px;
+    grid-auto-flow: dense; 
 }
 
-@media(max-width: 645px) and (orientation: landscape) {
+
+@media(max-width: 768px) and (orientation: landscape) {
     .images {
         display: block;
         white-space: nowrap;
         overflow-x: auto;
+    }
+}
+
+@media(max-width: 425px) {
+    .images {
+        display: flex;
+        flex-direction: column;
     }
 }
