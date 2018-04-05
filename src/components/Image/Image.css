@@ -1,8 +1,12 @@
 .image {
     cursor: pointer;
+    height: 200px;
+    flex-grow: 1;
 }
-.image img {
-    width: 320px;
+.image__item {
+    height: inherit;
+    min-width: 100%;
+    object-fit: contain;
 }
 
 @media(max-width: 645px) and (orientation: landscape) {
