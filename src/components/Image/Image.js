@@ -6,6 +6,7 @@ const Image = ({ image, onClick }) =>
   (
     <div className="image">
       <img
+        style={{ backgroundColor: `#${image.accentColor}` }}
         className="image__item"
         src={image.thumbnailUrl}
         alt={image.name}
