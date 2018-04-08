@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin: 20px 0;
+    padding: 20px 0;
 }
 
 .search-form__input {
