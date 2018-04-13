@@ -10,8 +10,6 @@
 @media(max-width: 736px) and (orientation: landscape) {
     .images {
         display: block;
-        white-space: nowrap;
-        overflow-x: auto;
     }
 }
 

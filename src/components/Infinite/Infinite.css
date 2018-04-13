@@ -1,3 +1,11 @@
 .infinite {
     padding: 0 5px;
 }
+
+@media(max-width: 736px) and (orientation: landscape) {
+    .infinite {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+}

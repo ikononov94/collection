@@ -13,25 +13,30 @@ const App = (props) => {
   const {
     errorMessage, images, isFetchingImages, isFetchingNextImages,
   } = props;
-  return (
-    <section className="collection">
-      <SearchForm fetchImages={props.fetchImages} />
-      {
-        errorMessage &&
+  if (errorMessage) {
+    return (
+      <section className="collection">
+        <SearchForm fetchImages={props.fetchImages} />
         <p className="error-empty">{errorMessage}</p>
-      }
-      {
-        isFetchingImages &&
+      </section>
+    );
+  } else if (isFetchingImages) {
+    return (
+      <section className="collection">
+        <SearchForm fetchImages={props.fetchImages} />
         <div className="loader loader-fullscreen">
           <div className="loader__spin" />
         </div>
-      }
-      {
-        !errorMessage && !isFetchingImages &&
-          <Infinite nextImages={props.fetchNextImages} isFetching={isFetchingNextImages}>
-            <Images images={images} onClick={props.onClickImage} />
-            <SlideShow />
-          </Infinite>
+      </section>
+    );
+  } return (
+    <section className="collection">
+      <SearchForm fetchImages={props.fetchImages} />
+      {images.length !== 0 &&
+      <Infinite nextImages={props.fetchNextImages} isFetching={isFetchingNextImages}>
+        <Images images={images} onClick={props.onClickImage} />
+        <SlideShow />
+      </Infinite>
       }
     </section>
   );
