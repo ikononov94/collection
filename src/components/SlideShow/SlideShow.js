@@ -5,24 +5,9 @@ import { onCloseImage, nextImage, prevImage, loadedImage } from '../../actions/s
 import './SlideShow.css';
 
 class SlideShow extends Component {
-  constructor(props) {
-    super(props);
-
-    this.onScroll = this.onScroll.bind(this);
-  }
-
-  componentWillMount() {
-    document.addEventListener('scroll', this.onScroll);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll() {
-    if (this.props.index !== null) {
-      document.documentElement.scrollTop = 0;
-    }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.index !== null) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
   }
 
   render() {
