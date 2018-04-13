@@ -21,7 +21,7 @@ export const fetchImages = searchValue =>
     try {
       const response = await fetch(
         `https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=${searchValue}&count=33`,
-        { headers: { 'Ocp-Apim-Subscription-Key': 'b763eddd694345cfaa411d94dc428a4c' } },
+        { headers: { 'Ocp-Apim-Subscription-Key': '76ae7c9307e5415ebfd65df1fefe4e18' } },
       );
       const images = await response.json();
 
@@ -66,7 +66,7 @@ export const fetchNextImages = () =>
       const response = await fetch(
         `https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=
           ${searchValue}&count=33&offset=${images.nextOffset}`,
-        { headers: { 'Ocp-Apim-Subscription-Key': 'b763eddd694345cfaa411d94dc428a4c' } },
+        { headers: { 'Ocp-Apim-Subscription-Key': '76ae7c9307e5415ebfd65df1fefe4e18' } },
       );
       const nextImages = await response.json();
 
