@@ -7,7 +7,7 @@
 }
 
 
-@media(max-width: 768px) and (orientation: landscape) {
+@media(max-width: 736px) and (orientation: landscape) {
     .images {
         display: block;
         white-space: nowrap;

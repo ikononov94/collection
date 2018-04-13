@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Infinite.css';
 
 export default class Infinite extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class Infinite extends Component {
   onScroll() {
     if (this.props.isFetching) return;
 
-    const scrollHeight = document.body.scrollHeight || document.body.clientHeight;
+    const scrollHeight = document.body.scrollHeight;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop + window.innerHeight >= scrollHeight - 300) {
@@ -29,7 +30,7 @@ export default class Infinite extends Component {
 
   render() {
     return (
-      <div className="infinity">
+      <div className="infinite">
         {this.props.children}
         {
           this.props.isFetching &&
