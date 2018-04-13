@@ -7,16 +7,27 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      searchValue: '',
+    };
+
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   onSubmit(event) {
-    const { search } = this.props;
-    const { value } = this.input;
+    const { fetchImages } = this.props;
+    const { searchValue } = this.state;
+
+    fetchImages(encodeURIComponent(searchValue.trim()));
 
     event.preventDefault();
+  }
 
-    search(encodeURIComponent(value.trim()));
+  handleChange(event) {
+    this.setState({
+      searchValue: event.target.value,
+    });
   }
 
   render() {
@@ -25,7 +36,7 @@ class SearchForm extends Component {
         <input
           className="search-form__input"
           type="text"
-          ref={(input) => { this.input = input; }}
+          onChange={this.handleChange}
         />
         <button className="search-form__button">Найти</button>
       </form>);
@@ -34,7 +45,7 @@ class SearchForm extends Component {
 
 
 SearchForm.propTypes = {
-  search: PropTypes.func.isRequired,
+  fetchImages: PropTypes.func.isRequired,
 };
 
 export default SearchForm;

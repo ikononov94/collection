@@ -4,9 +4,6 @@ import PropTypes from 'prop-types';
 export default class Infinite extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: false,
-    };
 
     this.onScroll = this.onScroll.bind(this);
   }
@@ -20,24 +17,13 @@ export default class Infinite extends Component {
   }
 
   onScroll() {
-    if (this.state.loading) return;
+    if (this.props.isFetching) return;
 
     const scrollHeight = document.body.scrollHeight || document.body.clientHeight;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop + window.innerHeight >= scrollHeight - 300) {
-      this.setState({ loading: true });
-      this.nextPage();
-    }
-  }
-
-  async nextPage() {
-    try {
-      await this.props.nextImages();
-    } catch (error) {
-      console.log(error);
-    } finally {
-      this.setState({ loading: false });
+      this.props.nextImages();
     }
   }
 
@@ -46,7 +32,7 @@ export default class Infinite extends Component {
       <div className="infinity">
         {this.props.children}
         {
-          this.state.loading &&
+          this.props.isFetching &&
             <div className="loader loader-after">
               <div className="loader__spin" />
             </div>
@@ -59,4 +45,9 @@ export default class Infinite extends Component {
 Infinite.propTypes = {
   nextImages: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  isFetching: PropTypes.bool,
+};
+
+Infinite.defaultProps = {
+  isFetching: false,
 };
