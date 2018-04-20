@@ -15,7 +15,7 @@ jobs:
         - npm run build
       deploy:
         provider: heroku
-        app: collection
+        app: radiant-beach-82987
         api-key:
           secure: 293d7180-e627-4b81-ba29-65a762db2314  
         skip_cleanup: true
