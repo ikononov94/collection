@@ -17,5 +17,5 @@ jobs:
         provider: heroku
         app: collection
         api-key:
-          secure: 8e20dd22-c8bf-4081-a595-0ca57498d763  
+          secure: 293d7180-e627-4b81-ba29-65a762db2314  
         skip_cleanup: true
