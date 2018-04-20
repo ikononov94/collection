@@ -2,10 +2,10 @@ const express = require('express');
 
 const app = express();
 
-app.set('port', (process.env.PORT || 5000));
+const PORT = process.env.PORT || 5000;
 
-app.use('/', express.static(__dirname));
+app.use('/*', express.static(__dirname, 'build/index.html'));
 
-app.listen(app.get('port'), () => {
-  console.log(`Server started: http://localhost:${app.get('port')}/`);
+app.listen(PORT, () => {
+  console.log(`Server started: ${port}`);
 });
