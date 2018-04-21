@@ -30,7 +30,7 @@ class SlideShow extends Component {
           <div className="loader loader-fullscreen">
             <div className="loader__spin" />
           </div>
-        
+        }
         <div className="show-image__prev" role="presentation" onClick={this.props.prevImage} />
         <div className="show-image__next" role="presentation" onClick={this.props.nextImage} />
         <div className="show-image__close" role="presentation" onClick={this.props.onCloseImage} />
@@ -41,8 +41,8 @@ class SlideShow extends Component {
 
 SlideShow.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object),
-  index: PropTypes.number,
-  loadingImage: PropTypes.bool,
+    index: PropTypes.number,
+    loadingImage: PropTypes.bool,
   nextImage: PropTypes.func.isRequired,
   prevImage: PropTypes.func.isRequired,
   loadedImage: PropTypes.func.isRequired,
