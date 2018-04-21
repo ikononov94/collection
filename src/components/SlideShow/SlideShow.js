@@ -33,7 +33,7 @@ class SlideShow extends Component {
         }
         <div className="show-image__prev" role="presentation" onClick={this.props.prevImage} />
         <div className="show-image__next" role="presentation" onClick={this.props.nextImage} />
-        <div className="show-image__close" role="presentation" onClick={this.props.onCloseImage}>&times;</div>
+        <div className="show-image__close" role="presentation" onClick={this.props.onCloseImage} />
       </div>
     );
   }
