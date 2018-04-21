@@ -4,12 +4,12 @@ language: node_js
 node_js:
   - 'node'
 
-script:
-  - npm run lint
-  - npm run test
-
 jobs:
   include:
+    - stage: lint
+      script: npm run lint
+    - stage: test
+      script: npm run test
     - stage: deploy
       script:
         - npm run build
