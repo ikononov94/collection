@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { onCloseImage, nextImage, prevImage, loadedImage } from '../../actions/slideShow';
+import { onCloseImage, nextImage, prevImage, loadedImage, errorLoadedImage } from '../../actions/slideShow';
 import './SlideShow.css';
 
 class SlideShow extends Component {
@@ -22,6 +22,7 @@ class SlideShow extends Component {
             src={images[index].contentUrl}
             onClick={this.props.nextImage}
             onLoad={this.props.loadedImage}
+            onError={this.props.errorLoadedImage}
             alt={images[index].name}
           />
         </div>
@@ -46,6 +47,7 @@ SlideShow.propTypes = {
   prevImage: PropTypes.func.isRequired,
   loadedImage: PropTypes.func.isRequired,
   onCloseImage: PropTypes.func.isRequired,
+  errorLoadedImage: PropTypes.func.isRequired,
 };
 
 SlideShow.defaultProps = {
@@ -65,5 +67,6 @@ export default connect(
     nextImage: () => dispatch(nextImage()),
     prevImage: () => dispatch(prevImage()),
     loadedImage: () => dispatch(loadedImage()),
+    errorLoadedImage: () => dispatch(errorLoadedImage()),
   }),
 )(SlideShow);

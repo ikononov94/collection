@@ -3,6 +3,7 @@ export const HIDE_IMAGE = 'HIDE_IMAGE';
 export const NEXT_IMAGE = 'NEXT_IMAGE';
 export const PREV_IMAGE = 'PREV_IMAGE';
 export const LOADED_IMAGE = 'LOADED_IMAGE';
+export const ERROR_LOADED_IMAGE = 'ERROR_LOADED_IMAGE';
 
 export const onClickImage = imageId => (dispatch, getState) => {
   getState().searchReducer.images.value.forEach((currentValue, currentIndex) => {
@@ -50,5 +51,11 @@ export const prevImage = () => (dispatch, getState) => {
 export const loadedImage = () => (dispatch) => {
   dispatch({
     type: LOADED_IMAGE,
+  });
+};
+
+export const errorLoadedImage = () => (dispatch) => {
+  dispatch({
+    type: ERROR_LOADED_IMAGE,
   });
 };
