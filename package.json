@@ -19,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js --ext .jsx ./src --fix",
-    "lint:fix": "npm run lint --fix"
+    "lint": "eslint --ext .js --ext .jsx ./src",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^15.0.1",
