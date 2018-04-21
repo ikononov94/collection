@@ -41,8 +41,8 @@ class SlideShow extends Component {
 
 SlideShow.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object),
-    index: PropTypes.number,
-    loadingImage: PropTypes.bool,
+  index: PropTypes.number,
+  loadingImage: PropTypes.bool,
   nextImage: PropTypes.func.isRequired,
   prevImage: PropTypes.func.isRequired,
   loadedImage: PropTypes.func.isRequired,
