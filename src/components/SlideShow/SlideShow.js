@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { onCloseImage, nextImage, prevImage, loadedImage } from '../../actions/slideShow';
+import { onCloseImage, nextImage, prevImage, loadedImage, errorLoadedImage } from '../../actions/slideShow';
 import './SlideShow.css';
 
 class SlideShow extends Component {
@@ -22,6 +22,7 @@ class SlideShow extends Component {
             src={images[index].contentUrl}
             onClick={this.props.nextImage}
             onLoad={this.props.loadedImage}
+            onError={this.props.errorLoadedImage}
             alt={images[index].name}
           />
         </div>
@@ -32,7 +33,7 @@ class SlideShow extends Component {
         }
         <div className="show-image__prev" role="presentation" onClick={this.props.prevImage} />
         <div className="show-image__next" role="presentation" onClick={this.props.nextImage} />
-        <div className="show-image__close" role="presentation" onClick={this.props.onCloseImage}>&times;</div>
+        <div className="show-image__close" role="presentation" onClick={this.props.onCloseImage} />
       </div>
     );
   }
@@ -40,12 +41,13 @@ class SlideShow extends Component {
 
 SlideShow.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object),
-  index: PropTypes.number,
-  loadingImage: PropTypes.bool,
+    index: PropTypes.number,
+    loadingImage: PropTypes.bool,
   nextImage: PropTypes.func.isRequired,
   prevImage: PropTypes.func.isRequired,
   loadedImage: PropTypes.func.isRequired,
   onCloseImage: PropTypes.func.isRequired,
+  errorLoadedImage: PropTypes.func.isRequired,
 };
 
 SlideShow.defaultProps = {
@@ -65,5 +67,6 @@ export default connect(
     nextImage: () => dispatch(nextImage()),
     prevImage: () => dispatch(prevImage()),
     loadedImage: () => dispatch(loadedImage()),
+    errorLoadedImage: () => dispatch(errorLoadedImage()),
   }),
 )(SlideShow);

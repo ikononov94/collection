@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/slideShow';
 
-export default (state = { index: null, loadingImage: false }, action) => {
+export default (state = { index: null, loadingImage: false, errorMessage: '' }, action) => {
   switch (action.type) {
     case actionTypes.SHOW_IMAGE:
       return {
@@ -26,6 +26,11 @@ export default (state = { index: null, loadingImage: false }, action) => {
         loadingImage: action.loading,
       };
     case actionTypes.LOADED_IMAGE:
+      return {
+        ...state,
+        loadingImage: false,
+      };
+    case actionTypes.ERROR_LOADED_IMAGE:
       return {
         ...state,
         loadingImage: false,
