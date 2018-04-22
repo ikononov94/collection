@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { onCloseImage, nextImage, prevImage, loadedImage, errorLoadedImage } from '../../actions/slideShow';
 import './SlideShow.css';
 
-class SlideShow extends Component {
+export class SlideShow extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.index !== null) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
