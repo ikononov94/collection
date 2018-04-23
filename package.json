@@ -33,10 +33,12 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.1.0",
+    "gemini": "^5.6.2",
     "jest-enzyme": "^6.0.0",
     "mocha": "^5.1.1",
     "react-test-renderer": "^16.3.2",
     "redux-test-utils": "^0.2.2",
+    "selenium-standalone": "^6.14.0",
     "sinon": "^4.5.0"
   },
   "babel": {
