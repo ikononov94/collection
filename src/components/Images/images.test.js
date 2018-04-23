@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import sinon from 'sinon'
+import sinon from 'sinon';
 
 import Images from './Images';
 
