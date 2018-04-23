@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk';
 import searchReducer from './reducers/search';
 import slideShowReducer from './reducers/slideShow';
 import './index.css';
-import App from './App';
+import Application from './App';
 
 const store = createStore(
   combineReducers({ searchReducer, slideShowReducer }),
@@ -15,6 +15,6 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Application />
   </Provider>,
   document.getElementById('root'));

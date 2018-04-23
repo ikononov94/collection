@@ -5,11 +5,11 @@ import { fetchImages, fetchNextImages } from './actions/search';
 import { onClickImage } from './actions/slideShow';
 import SearchForm from './components/SearchForm/SearchForm';
 import Images from './components/Images/Images';
-import SlideShow from './components/SlideShow/SlideShow';
+import Preview from './components/SlideShow/SlideShow';
 import Infinite from './components/Infinite/Infinite';
 import './App.css';
 
-const App = (props) => {
+export const App = (props) => {
   const {
     errorMessage, images, isFetchingImages, isFetchingNextImages,
   } = props;
@@ -35,7 +35,7 @@ const App = (props) => {
       {images.length !== 0 &&
       <Infinite nextImages={props.fetchNextImages} isFetching={isFetchingNextImages}>
         <Images images={images} onClick={props.onClickImage} />
-        <SlideShow />
+        <Preview />
       </Infinite>
       }
     </section>
