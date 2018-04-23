@@ -9,7 +9,7 @@ import Preview from './components/SlideShow/SlideShow';
 import Infinite from './components/Infinite/Infinite';
 import './App.css';
 
-const App = (props) => {
+export const App = (props) => {
   const {
     errorMessage, images, isFetchingImages, isFetchingNextImages,
   } = props;
