@@ -8,8 +8,14 @@ jobs:
   include:
     - stage: lint
       script: npm run lint
-    - stage: test
+    - stage: unit testing
       script: npm run test
+    - stage: regression testing
+      script:
+        - npm run start
+        - npm run selenium:install
+        - npm run selenium:start
+        - npm run gemini:test
     - stage: deploy
       script:
         - npm run build
