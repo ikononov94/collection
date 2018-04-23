@@ -1,0 +1,6 @@
+#!/bin/bash
+
+npm run selenium:install
+npm run selenium:start
+npm run deploy:server
+npm run gemini:test
