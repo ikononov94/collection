@@ -13,7 +13,7 @@ function setup() {
 
   const wrapper = mount((
     <Infinite {...props}>
-      <Images images={[]} onClick={() => console.log(1)} />
+      <Images images={[]} onClick={sinon.spy()} />
     </Infinite>
   ));
 

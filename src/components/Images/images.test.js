@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon'
 
 import Images from './Images';
 
@@ -17,7 +18,7 @@ const images = [
   },
 ];
 
-const wrapper = shallow(<Images images={images} onClick={() => console.log(Images)} />);
+const wrapper = shallow(<Images images={images} onClick={sinon.spy()} />);
 
 describe('<Images />', () => {
   it('component Images', () => {
