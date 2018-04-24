@@ -33,7 +33,7 @@ gemini.suite('Image preview mobile', (suite) => {
     .setCaptureElements('.show-image')
     .capture('preview portrait', (actions) => {
       actions.click('.image');
-      actions.waitForElementToShow('.show-image__image');
+      actions.waitForElementToShow('.show-image__image', 5000);
     })
     .capture('preview mobile orientation landscape', (actions) => {
       actions.setWindowSize(575, 375);

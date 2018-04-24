@@ -28,6 +28,6 @@ gemini.suite('Image preview desctop', (suite) => {
     .setCaptureElements('.show-image')
     .capture('preview', (actions) => {
       actions.click('.image');
-      actions.waitForElementToShow('.show-image__image');
+      actions.waitForElementToShow('.show-image__image', 5000);
     });
 });
