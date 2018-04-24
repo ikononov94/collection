@@ -2,9 +2,9 @@
 
 npm run selenium:install &
 wait
-npm run selenium:start &
+npm run selenium:start > /dev/null &
 sleep 10
 npm run start &
 sleep 10
-npm run gemini:test > /dev/null &
+npm run gemini:test &
 wait
