@@ -24,7 +24,9 @@ jobs:
     - stage: unit testing
       script: npm run test
     - stage: regression testing
-      script: bash gemini-selenium
+      script: 
+        - bash gemini-selenium
+        - npm run gemini:test
     - stage: deploy
       script:
         - npm run build
