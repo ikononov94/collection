@@ -1,0 +1,8 @@
+#!/bin/bash
+
+npm run selenium:install &
+wait
+npm run selenium:start &> /dev/null &
+sleep 5
+npm run start &
+sleep 10

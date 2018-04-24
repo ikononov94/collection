@@ -1,15 +1,36 @@
+dist: trusty
 sudo: required
 language: node_js
 
 node_js:
   - 'node'
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq -y graphicsmagick
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+
 jobs:
   include:
     - stage: lint
       script: npm run lint
-    - stage: test
+    - stage: unit testing
       script: npm run test
+    - stage: regression testing
+      script: 
+        - bash gemini-selenium
+        - npm run gemini:test
     - stage: deploy
       script:
         - npm run build
