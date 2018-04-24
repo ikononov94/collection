@@ -4,5 +4,7 @@ npm run selenium:install &
 wait
 npm run selenium:start &
 sleep 10
+npm run start &
+sleep 10
 npm run gemini:test &
 wait
