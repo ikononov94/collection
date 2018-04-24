@@ -24,6 +24,7 @@
     "lint:fix": "npm run lint -- --fix",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start",
+    "gemini:update": "gemini update",
     "gemini:test": "gemini test",
     "deploy:server": "node server.js"
   },
