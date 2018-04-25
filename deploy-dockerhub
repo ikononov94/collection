@@ -1,5 +1,10 @@
 #!/bin/bash
 docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD
 docker build -t collection .
+docker pull selenium/hub
+docker pull selenium/standalone-chrome
+docker network create grid
+docker run -d -p 4444:4444 --net grid --name selenium-hub selenium/hub:3.11.0-dysprosium
+docker run -d --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-chrome:3.11.0-dysprosium
 docker tag collection funko142/collection:latest
 docker push funko142/collection:latest
