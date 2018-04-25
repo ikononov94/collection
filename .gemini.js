@@ -1,6 +1,6 @@
 module.exports = {
-    rootUrl: 'http://localhost:3000',
-    gridUrl: 'http://127.0.0.1:4444/wd/hub',
+    rootUrl: 'https://collection-homework.herokuapp.com/',
+    gridUrl: 'http://localhost:4444/wd/hub',
 
     browsers: {
         chrome: {

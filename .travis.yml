@@ -10,11 +10,12 @@ jobs:
   include:
     - stage: lint
       script: npm run lint
-    - stage: test
+    - stage: unit testing
       script: npm run test
+    - stage: regression testing
+      - script: bash deploy-dockerhub && npm run gemini:test
     - stage: deploy
-      script:
-        - npm run build
+      script: npm run build
       deploy:
         provider: script
         script: bash deploy-dockerhub && sh deploy-heroku 
