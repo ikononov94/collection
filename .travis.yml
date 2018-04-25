@@ -20,4 +20,4 @@ jobs:
         script: bash deploy-dockerhub && sh deploy-heroku 
         skip_cleanup: true
         on:
-          branch: heroku-deploy
+          branch: master
