@@ -21,7 +21,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js --ext .jsx ./src",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "deploy:server": "node server.js"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
