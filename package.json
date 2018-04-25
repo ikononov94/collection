@@ -22,7 +22,11 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js --ext .jsx ./src",
     "lint:fix": "npm run lint -- --fix",
-    "deploy:server": "node server.js"
+    "deploy:server": "node server.js",
+    "selenium:install": "selenium-standalone install",
+    "selenium:start": "selenium-standalone start",
+    "gemini:update": "gemini update",
+    "gemini:test": "gemini test"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
