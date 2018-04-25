@@ -17,8 +17,9 @@ jobs:
         - npm run build
       deploy:
         provider: script
-        script: bash deploy-dockerhub
-        script: bash deploy-heroku 
+        script: 
+          - bash deploy-dockerhub
+          - bash deploy-heroku 
         skip_cleanup: true
         on:
           branch: heroku-deploy
