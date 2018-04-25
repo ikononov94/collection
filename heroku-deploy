@@ -1,0 +1,5 @@
+#!/bin/bash
+docker build -t collection .
+docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD registry.heroku.com
+docker tag collection registry.heroku.com/radiant-beach-82987/web
+docker push registry.heroku.com/radiant-beach-82987/web
