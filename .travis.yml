@@ -19,7 +19,7 @@ jobs:
         provider: script
         script: 
           - bash deploy-dockerhub
-          - bash deploy-heroku 
+          - sh deploy-heroku 
         skip_cleanup: true
         on:
           branch: heroku-deploy
