@@ -1,0 +1,5 @@
+#!/bin/bash
+docker login -u=$DOCKER_USER -p=$DOCKER_PASSWORD
+docker build -t collection .
+docker tag collection funko142/collection:latest
+docker push funko142/collection:latest
