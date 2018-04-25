@@ -1,4 +1,6 @@
 sudo: required
+services:
+  - docker
 language: node_js
 
 node_js:
@@ -14,8 +16,8 @@ jobs:
       script:
         - npm run build
       deploy:
-        provider: heroku
-        app: radiant-beach-82987
-        api-key:
-          secure: 293d7180-e627-4b81-ba29-65a762db2314  
+        provider: script
+        script: bash heroku-deploy 
         skip_cleanup: true
+        on:
+          branch: heroku-deploy
