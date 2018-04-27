@@ -12,7 +12,6 @@ gemini.suite('Start page desctop', (suite) => {
       })
       .capture('render images', (actions) => {
         actions.click('.search-form__button');
-        actions.wait(2000);
         actions.waitForElementToShow('.image');
       })    
 });

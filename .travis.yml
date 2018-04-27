@@ -4,17 +4,18 @@ services:
 language: node_js
 
 node_js:
-  - 'node'
+  - 'lts/*'
 
 jobs:
   include:
     - stage: lint
       script: npm run lint
-    - stage: test
+    - stage: Unit testing
       script: npm run test
+    - stage: Regression testing
+      script: npm run gemini:test
     - stage: deploy
-      script:
-        - npm run build
+      script: npm run build
       deploy:
         provider: script
         script: bash deploy-dockerhub && sh deploy-heroku 
